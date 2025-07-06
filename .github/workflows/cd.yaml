@@ -23,8 +23,8 @@ jobs:
 
       - name: Replace image tags in frontend.yaml and backend.yaml
         run: |
-          sed -i "s|image: frontend:.*|image: ghcr.io/${{ github.repository_owner }}/todo-frontend:${IMAGE_TAG}|" todo-app/k8s-manifests/frontend.yaml
-          sed -i "s|image: backend:.*|image: ghcr.io/${{ github.repository_owner }}/todo-backend:${IMAGE_TAG}|" todo-app/k8s-manifests/backend.yaml
+          sed -i "s|image: ghcr.io.*/todo-frontend:.*|image: ghcr.io/${{ github.repository_owner }}/todo-frontend:${IMAGE_TAG}|" todo-app/k8s-manifests/frontend.yaml
+          sed -i "s|image: ghcr.io.*/todo-backend:.*|image: ghcr.io/${{ github.repository_owner }}/todo-backend:${IMAGE_TAG}|" todo-app/k8s-manifests/backend.yaml
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
