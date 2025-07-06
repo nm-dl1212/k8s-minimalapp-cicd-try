@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - main
-    paths:
-      - 'todo-app/backend/**'
-      - 'todo-app/frontend/**'
 
 jobs:
   build-and-push:
