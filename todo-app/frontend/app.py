@@ -4,7 +4,7 @@ import os
 
 API_URL = os.getenv("API_URL", "http://backend:5000")
 
-st.title("🐬Todo App")
+st.title("🍣Todo App")
 
 new_todo = st.text_input("新しいTodoを追加")
 if st.button("追加"):
