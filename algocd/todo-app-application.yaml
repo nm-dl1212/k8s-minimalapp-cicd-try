@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: todo-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/dl-1212/try-minikube.git'
+    targetRevision: main
+    path: todo-app/k8s-manifests
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: todo-app
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
