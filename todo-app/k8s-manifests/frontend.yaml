@@ -10,7 +10,9 @@ spec:
       nodePort: 30001
   selector:
     app: frontend
-
+  template:
+    spec:
+      containers: []
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -28,7 +30,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: ghcr.io/nm-dl1212/todo-frontend:15ef8f8bb6900fd5e5695355fd5041520fc4d014
+          image: ghcr.io/nm-dl1212/todo-frontend:${IMAGE_TAG}
           imagePullPolicy: Always
           env:
             - name: API_URL
