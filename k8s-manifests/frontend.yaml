@@ -30,8 +30,8 @@ spec:
         - name: frontend
           image: ghcr.io/nm-dl1212/todo-frontend:49ec9d5472034208ab12bf77f08d0dbc0d549702
           imagePullPolicy: Always
-          env:
-            - name: API_URL
-              value: "http://backend:5000"
+          envFrom:
+            - configMapRef:
+                name: api-config
           ports:
             - containerPort: 8501
