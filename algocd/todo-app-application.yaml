@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/dl-1212/k8s-minimalapp-cicd-try.git'
+    repoURL: 'https://github.com/nm-dl1212/k8s-minimalapp-cicd-try.git'
     targetRevision: main
     path: k8s-manifests
   destination:
