@@ -21,7 +21,7 @@ kubectl get svc -A
 
 # アクセス
 以下のようにして、外部からのアクセスが利くようにport-forwardしておく。
-
+永続化したいときはサービスに入れておく。
 ```sh
 kubectl port-forward -n argocd svc/argocd-server 2443:443 --address 0.0.0.0
 kubectl port-forward -n argo svc/argo-server 2746:2746 --address 0.0.0.0
