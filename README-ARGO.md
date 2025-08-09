@@ -29,10 +29,15 @@ kubectl port-forward -n argo svc/argo-server 2746:2746 --address 0.0.0.0
 
 
 # デプロイメント
-
 名前空間を先に作っておく。
 ```sh
 kubectl create ns todo-prod
+```
+
+secretを作成する。
+ファイル中の`POSTGRES_PASSWORD`のセクションを任意の値で書き換える。
+```sh
+cp k8s-manifests/config/db-secret.yaml.template k8s-manifests/config/db-secret.yaml
 ```
 
 config/* を先にアプライする。
@@ -47,3 +52,6 @@ kubectl apply -f k8s-manifests/argocd/
 ```
 deployment/* のマニフェストを対象に、自動デプロイが実行される
 **ここで参照しているのはローカルのマニフェストファイルではなく、githubレポジトリの方であることが重要!!!**
+
+
+以降、deployment/* 以下のマニフェストに修正が入ったときのみ、自動デプロイが実行される。
