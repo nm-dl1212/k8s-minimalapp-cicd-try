@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: 'https://github.com/dl-1212/try-minikube.git'
     targetRevision: main
-    path: todo-app/k8s-manifests
+    path: k8s-manifests
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: todo-app

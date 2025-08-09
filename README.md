@@ -37,10 +37,16 @@ kubectl apply -f k8s-manifests/ -n todo-app
 
 ### 4. アプリへのアクセス
 
-サービスが起動したら、MinikubeのサービスURLを取得してブラウザでアクセスします。
+サービスが起動したら、MinikubeのサービスURLを確認します
 
 ```sh
 minikube service list
+```
+
+ssh先でminikubeを使用している場合は、以下のコマンドでminikubeのURLを0.0.0.0に転送します。
+クライアントPCから、http://{ssh先PCのIP}:30001にアクセスすると、フロントエンドが表示されます。
+```sh
+sudo socat TCP-LISTEN:30001,fork,bind=0.0.0.0 TCP:xxx.xxx.xx.x:30001
 ```
 
 ### 5. アプリの削除
