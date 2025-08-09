@@ -26,3 +26,24 @@ kubectl get svc -A
 kubectl port-forward -n argocd svc/argocd-server 2443:443 --address 0.0.0.0
 kubectl port-forward -n argo svc/argo-server 2746:2746 --address 0.0.0.0
 ```
+
+
+# デプロイメント
+
+名前空間を先に作っておく。
+```sh
+kubectl create ns todo-prod
+```
+
+config/* を先にアプライする。
+これらはargo-cdの自動デプロイの対象外。
+```sh
+kubectl apply -n todo-prod -f k8s-manifests/config/
+```
+
+algo-cdにアプリケーションを作登録する。
+```sh
+kubectl apply -f k8s-manifests/argocd/ 
+```
+deployment/* のマニフェストを対象に、自動デプロイが実行される
+**ここで参照しているのはローカルのマニフェストファイルではなく、githubレポジトリの方であることが重要!!!**
