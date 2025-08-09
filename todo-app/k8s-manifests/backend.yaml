@@ -25,7 +25,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: ghcr.io/nm-dl1212/todo-backend:8ba1cd46f3855283f5435746b598d2ceaedb6770
+          image: ghcr.io/nm-dl1212/todo-backend:89e24aad92d21fb3845b19b71c57b87a0857b265
           imagePullPolicy: Always
           env:
             - name: POSTGRES_HOST

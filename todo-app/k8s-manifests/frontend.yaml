@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: ghcr.io/nm-dl1212/todo-frontend:8ba1cd46f3855283f5435746b598d2ceaedb6770
+          image: ghcr.io/nm-dl1212/todo-frontend:89e24aad92d21fb3845b19b71c57b87a0857b265
           imagePullPolicy: Always
           env:
             - name: API_URL
