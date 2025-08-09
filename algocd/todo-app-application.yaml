@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: 'https://github.com/nm-dl1212/k8s-minimalapp-cicd-try.git'
     targetRevision: main
-    path: k8s-manifests
+    path: k8s-manifests/deployment
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: todo-prod
