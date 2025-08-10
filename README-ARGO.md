@@ -55,3 +55,11 @@ deployment/* のマニフェストを対象に、自動デプロイが実行さ�
 
 
 以降、deployment/* 以下のマニフェストに修正が入ったときのみ、自動デプロイが実行される。
+
+
+# ポートフォワーディングの永続化
+以下で、kubectl port-forwardをサービスに登録して、接続を永続化できる。
+```sh
+chmod +x setup-port-forwarding-service.sh
+./setup-port-forwarding-service.sh
+```

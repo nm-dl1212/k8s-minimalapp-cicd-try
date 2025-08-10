@@ -49,6 +49,13 @@ ssh先でminikubeを使用している場合は、以下のコマンドでminiku
 sudo socat TCP-LISTEN:30001,fork,bind=0.0.0.0 TCP:xxx.xxx.xx.x:30001
 ```
 
+
+サービスに登録するためのスクリプトを作成した。
+```sh
+chmod +x setup-socat-service.sh
+./setup-socat-service.sh
+```
+
 ### 5. アプリの削除
 
 namespaceを削除することで、デプロイしたリソースを一括削除します。
